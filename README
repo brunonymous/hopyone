@@ -1,0 +1,24 @@
+PREREQUISITES
+
+  You need:
+  - A x86 platform or a PowerPC platform
+  - 32 MB RAM and 80 MB swap
+  - Linux 2.x 
+  - SDL 1.2
+  - SDL_mixer
+  - the GCC C++ compiler
+  - GNU make
+
+COMPILING AND INSTALLING
+
+  To install in /usr/local :
+
+       ./bootstrap
+       ./configure
+        make
+        su -c 'make install'
+
+LEGAL
+
+  Hopy One is copyright TLK Games 1998-2009 and available under the
+  terms of the GNU General Public License. See COPYING for details.
