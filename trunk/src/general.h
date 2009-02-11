@@ -1,3 +1,28 @@
+/**
+ * @file general.h 
+ * @brief Main function is where the program starts execution 
+ * @created 2007-11-12 
+ * @date 2009-02-11 
+ */
+/*
+ * copyright (c) 1992-2009 TLK Games all rights reserved
+ * $Id$
+ *
+ * Hopy One is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Hopy One is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA  02110-1301, USA.
+ */
 #ifndef _general_h
 #define _general_h
 
@@ -23,8 +48,8 @@ typedef struct
 
 extern StructMouse mouse;
 
-/* Permits you to switch FULLSCREEN ON/OFF (1/0) */
-extern int fullscreen;
+/** Permits you to switch fullscrenn on/oof */
+extern bool fullscreen;
 
 /* Timer */
 extern int NewTick, LastTick;

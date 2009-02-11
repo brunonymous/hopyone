@@ -906,7 +906,7 @@ manageGame (void)
 /* initialization parts */
 
       /* clear screen */
-      clearBoard (screen);
+      //clearBoard (screen);
 
 /* PARTIE GESTION */
 
