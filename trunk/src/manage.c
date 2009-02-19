@@ -2,10 +2,12 @@
  * @file manage.c 
  * @brief 
  * @created 2007-11-12 
- * @date 2007-11-12
+ * @date 2009-02-19
+ * @author Gregory Cauchois
+ * @author Bruno Ethvignot
  */
 /*
- * copyright (c) 1998-2007 TLK Games all rights reserved
+ * copyright (c) 1992-2009 TLK Games all rights reserved
  * $Id$
  *
  * Hopy One is free software; you can redistribute it and/or modify
@@ -48,20 +50,21 @@ manageConfiguration ()
 
   char conf_name[10][100];
   char conf_option[10][64];
+  printf("manageConfiguration\n");
 
-  sprintf (conf_name[0], text[TEXT_LANG]);
+  sprintf (conf_name[0], "%s", text[TEXT_LANG]);
   sprintf (conf_option[0], "%s", cfg_lang);
-  sprintf (conf_name[1], text[TEXT_TEXT]);
+  sprintf (conf_name[1], "%s", text[TEXT_TEXT]);
   sprintf (conf_option[1], "%s", cfg_text);
-  sprintf (conf_name[2], text[TEXT_ANIMATION]);
+  sprintf (conf_name[2], "%s", text[TEXT_ANIMATION]);
   sprintf (conf_option[2], "%s", cfg_animation);
-  sprintf (conf_name[3], text[TEXT_MUSIC]);
+  sprintf (conf_name[3], "%s", text[TEXT_MUSIC]);
   sprintf (conf_option[3], "%s", cfg_music);
-  sprintf (conf_name[4], text[TEXT_SOUND]);
+  sprintf (conf_name[4], "%s", text[TEXT_SOUND]);
   sprintf (conf_option[4], "%s", cfg_sound);
-  sprintf (conf_name[5], text[TEXT_MUSICVOLUME]);
+  sprintf (conf_name[5], "%s", text[TEXT_MUSICVOLUME]);
   sprintf (conf_option[5], "%d", musicvol);
-  sprintf (conf_name[6], text[TEXT_SOUNDVOLUME]);
+  sprintf (conf_name[6], "%s", text[TEXT_SOUNDVOLUME]);
   sprintf (conf_option[6], "%d", soundvol);
 
   do
@@ -233,7 +236,7 @@ manageHiScores (int update)
         {
           char buffer2[8];
 
-          sprintf (buffer2, HiScore[i].name);
+          sprintf (buffer2, "%s", HiScore[i].name);
           /*
              for (j=strlen(HiScore[i].name);j<8;j++)
              buffer2[j]=' ';
@@ -906,7 +909,7 @@ manageGame (void)
 /* initialization parts */
 
       /* clear screen */
-      //clearBoard (screen);
+      clearBoard (screen);
 
 /* PARTIE GESTION */
 
@@ -933,11 +936,17 @@ manageGame (void)
 
       /* event handle */
       if (event[EVENT_QUIT])
-        done = 1;
+       {
+          done = 1;
+       }
       if (player.life <= 0)
-        done = 2;
+       {
+          done = 2;
+       }
       if (player.undying > 0)
-        player.undying--;
+       {
+          player.undying--;
+       }
 
       manageTransformation ();
 
